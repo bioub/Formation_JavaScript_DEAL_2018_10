@@ -1,10 +1,15 @@
 const nbs = [2, 3, 4];
 
-// Paradigme de programmation (style de programmtion)
+// Paradigme de programmation (style de programmation)
 // programmation fonctionnelle
 // map, filter, reduce, forEach -> ES5 (IE9+)
-nbs.filter((nb) => nb % 2 === 0)
-   .map((nb) => nb ** 2)
+function estPair(nb) {
+  return nb % 2 === 0;
+}
+
+// nbs.filter((nb) => nb % 2 === 0)
+nbs.filter(estPair)
+   .map(function (nb) { return nb ** 2 })
    .forEach((nb) => console.log(nb));
 
 console.log(nbs);

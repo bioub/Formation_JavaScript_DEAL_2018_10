@@ -24,7 +24,7 @@ function createButton(value) {
   const btn = document.createElement('button');
   btn.innerHTML = value;
   value = null;
-  btn.addEventListener('click', () => {
+  btn.addEventListener('click', (event) => {
     console.log(value); // Ajouter (au moment du click)
   });
 }
