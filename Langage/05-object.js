@@ -80,3 +80,16 @@ const str = JSON.stringify(coords);
 // .... réseau ....
 const coordsFromJSON = JSON.parse(str);
 console.log(coordsFromJSON.z); // 30
+
+
+class Voiture {
+  constructor(marque) {
+    this.marque = marque;
+  }
+  infos() {
+    return `Marque : ${this.marque}`;
+  }
+}
+
+console.log(typeof Voiture); // function
+console.log(typeof Voiture.prototype.infos); // function
