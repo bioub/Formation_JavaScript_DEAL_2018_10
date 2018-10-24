@@ -1,7 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  devtool: false,
+  devtool: 'source-map',
   entry: './src/js/index.js',
   output: {
     filename: 'app.[chunkHash].js'
