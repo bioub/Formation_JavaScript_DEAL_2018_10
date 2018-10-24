@@ -9,8 +9,8 @@ function estPair(nb) {
 
 // nbs.filter((nb) => nb % 2 === 0)
 nbs.filter(estPair)
-   .map(function (nb) { return nb ** 2 })
-   .forEach((nb) => console.log(nb));
+  .map(function (nb) { return nb ** 2; })
+  .forEach((nb) => console.log(nb));
 
 console.log(nbs);
 
@@ -24,7 +24,7 @@ console.log(sum);
 function setTimeoutSync(callback, delayMs) {
   // PAUSE delayMs (le thread sera bloqué donc mauvaise pratique)
   const debut = Date.now(); // timestamp
-  while (debut + delayMs > Date.now()) {}
+  while (debut + delayMs > Date.now()) { /* */ }
   callback();
 }
 

@@ -1,11 +1,17 @@
 // au niveau du langage on manipule des objets préexistants
 console.log('typeof Math', typeof Math); // object
+console.log('typeof JSON', typeof JSON); // object
 
 // au niveau de Node.js
 console.log('typeof process', typeof process); // object
+console.log('typeof exports', typeof exports); // object
+console.log('typeof module', typeof module); // object
+console.log('typeof global', typeof global); // object
 
 // au niveau du navigateur
 console.log('typeof document', typeof document); // object
+console.log('typeof navigator', typeof navigator); // object
+console.log('typeof window', typeof window); // object
 
 // au niveau du navigateur et de Node.js
 console.log('typeof console', typeof console); // object
@@ -73,15 +79,21 @@ for (let key in coords) {
   console.log(key, value);
 }
 
+// boucler sur les clés/valeurs d'un objet (ES8)
+for (let [key, value] of Object.entries(coords)) {
+  console.log(key, value);
+}
+
 // transformer un objet en type string et inversement avec JSON
 // JSON : JavaScript Object Notation
 // les méthodes n'existent plus en JSON
 const str = JSON.stringify(coords);
+// {"x": 10, "y": 20, "z": 30}
 // .... réseau ....
 const coordsFromJSON = JSON.parse(str);
 console.log(coordsFromJSON.z); // 30
 
-
+// fonction constructeur en ES6
 class Voiture {
   constructor(marque) {
     this.marque = marque;

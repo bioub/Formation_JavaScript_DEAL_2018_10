@@ -19,3 +19,12 @@ function log(file, msg) {
 
 })();
 
+// pile d'appels
+// ^
+// |
+// |                 appendFile
+// |appendFile       log
+// |log        ..... =>
+// 0-----------------3ms---------------------> temps
+// Sortie :
+

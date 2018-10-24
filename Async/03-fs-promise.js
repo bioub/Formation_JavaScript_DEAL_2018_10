@@ -5,10 +5,19 @@ function log(file, msg) {
   return fs.promises.appendFile(file, line);
 }
 
+console.time('Done');
 log('app.log', 'Ligne 1')
   .then(() => log('app.log', 'Ligne 2'))
   .then(() => log('app.log', 'Ligne 3'))
-  .then(() => console.log('Done'))
+  .then(() => console.timeEnd('Done'))
   .catch((err) => {
     console.log(err.message);
   });
+// pile d'appels
+// ^
+// |
+// |                 appendFile
+// |appendFile       log
+// |log        ..... =>
+// 0-----------------3ms---------------------> temps
+// Sortie :

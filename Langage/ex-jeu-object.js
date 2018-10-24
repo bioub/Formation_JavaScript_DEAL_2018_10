@@ -20,7 +20,7 @@ const random = {
 const readline = require('readline');
 
 function Jeu(options) {
-  options = options || {};
+  options = options || {};
   const min = options.min || 0;
   const max = options.max !== undefined ? options.max : 100;
 
@@ -60,5 +60,7 @@ Jeu.prototype.jouer = function() {
   });
 };
 
-const game = new Jeu();
+const game = new Jeu({
+  max: 10,
+});
 game.jouer();

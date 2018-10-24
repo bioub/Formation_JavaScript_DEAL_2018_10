@@ -6,6 +6,6 @@ console.log(nb2); // 1
 
 const obj1 = { nb: 1 };
 const obj2 = obj1; // passage par référence
-obj1.nb = 2
+obj1.nb = 2;
 
 console.log(obj2.nb); // 2
